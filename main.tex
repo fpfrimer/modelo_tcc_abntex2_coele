@@ -1,20 +1,29 @@
-%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Modelo de TCC da Universidade Tecnológica Federal do Paraná (UTFPR) - Campus Toledo
 %Baseado nas orientações do estilo abntex2 (http://linorg.usp.br/CTAN/macros/latex/contrib/abntex2/doc/abntex2.pdf)
 %Autor: Felipe Walter Dafico Pfrimer
-%Ultima atualização: 12/03/2019
-%
-%+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%Ultima atualização: 11/09/2020
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 %Tipo de documento ABNTEX2:
-\documentclass[12pt,openright,twoside,a4paper,
-%sumario=tradicional, % para o recomendado pela ABNT utilize sumario=abnt-6027-2012
-sumario=abnt-6027-2012,
-chapter=TITLE,  % títulos de capítulos convertidos em letras maiúsculas
-section=TITLE,  % títulos de seções convertidos em letras maiúsculas
-subsection=TITLE, % títulos de subseções convertidos em letras maiúsculas
-subsubsection=TITLE, % títulos de subsubseções em letras maiúsculas
-subsubsubsection=TITLE, % títulos de subsubsubseções em letras maiúsculas
-english,french,spanish,brazil]{abntex2}
+\documentclass[
+    12pt,                       % Tamanho sugerido ABNT NBR 14724:2011 - Seção 5.1
+    openright,                  % Capítulos comçam na página da direita
+    twoside,                    % Para impressão em frente e verso
+    a4paper,                    % Papel A4
+    %sumario=tradicional,       % Para o recomendado pela ABNT utilize sumario=abnt-6027-2012
+    sumario=abnt-6027-2012,     % Sumário estilo ABNT NBR 6027-2012
+    chapter=TITLE,              % Títulos de capítulos convertidos em letras maiúsculas
+    section=TITLE,              % Títulos de seções convertidos em letras maiúsculas
+    subsection=TITLE,           % Títulos de subseções convertidos em letras maiúsculas
+    subsubsection=TITLE,        % Títulos de subsubseções em letras maiúsculas
+    subsubsubsection=TITLE,     % Títulos de subsubsubseções em letras maiúsculas
+    english,                    % Suporte a línguas
+    french,
+    spanish,
+    brazil
+]{abntex2}                      % Classe ABNTEX
 %Observe que a ABNT NBR 14724:2011 (seção 5.1) recomenda que os documentos sejam impressos no anverso e no verso das folhas. Isso é obtido com a opção twoside.
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -32,12 +41,12 @@ english,french,spanish,brazil]{abntex2}
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %Informações do projeto de TCC:
-\titulo{Título do trabalho}
-\autor{Mévio Albuquerque e Caio Isoudo}
-\orientador{Prof. Tício de Oliveira}
-\coorientador{} %Deixe em branco caso não haja coorientador
-\data{2019} % Apenas o ano
-\local{Toledo} % Apenas a cidade
+\titulo{Título do trabalho}                 % Entre com o título do seu trabalho
+\autor{Mévio Albuquerque e Caio Isoudo}     % Entre com seu nome completo
+\orientador{Prof. Tício de Oliveira}        % Entre com o nome completo do orientador
+\coorientador{}                             %Deixe em branco caso não haja coorientador
+\data{2020}                                 % Insira apenas o ano
+\local{Toledo}                              % Insira apenas a cidade
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %Preambulo (Texto apresentado na contracapa):
@@ -51,9 +60,9 @@ english,french,spanish,brazil]{abntex2}
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %Pacotes adicionais:
-\usepackage{amssymb}
-\usepackage{tabto}
-\usepackage{hyperref}
+\usepackage{amssymb}            % Para símbolos matemáticos
+\usepackage{tabto}              % Comando para tabulação
+\usepackage{hyperref}           % Para inserir hyperlinks 
 \usepackage[%
     alf,
     abnt-emphasize=bf,
@@ -64,38 +73,45 @@ english,french,spanish,brazil]{abntex2}
     abnt-etal-cite=3,
     abnt-etal-list=3,
     abnt-thesis-year=final
-]{abntex2cite} 
-\usepackage{graphicx}
-\usepackage{nomencl} % Para a lista abreviaturas e siglas
-\makenomenclature    % Para a lista abreviaturas e siglas
+]{abntex2cite}                  % Citações no estilo ABNT
+\usepackage{graphicx}           % Para figuras
+\usepackage{nomencl}            % Para a lista abreviaturas e siglas
+\makenomenclature               % Para a lista abreviaturas e siglas
 
 % Remove o título original da Nomeclatura:
 \renewcommand{\nomname}{}
+
 % Modifica a separação do itens:
 \setlength{\nomitemsep}{0pt}
 \setlength{\nomlabelwidth}{2.5cm}
+
 % Definição do grupos:
 \RequirePackage{ifthen}
  \renewcommand{\nomgroup}[1]{%
      \ifthenelse{\equal{#1}{A}}{\cleardoublepage\item\makebox[0.8\linewidth]{\textbf{\uppercase{\large{Lista de Abreviaturas e Siglas}}}} \makebox[\linewidth]{}\\[0.6cm]}{%
      \ifthenelse{\equal{#1}{S}}{\cleardoublepage\item\makebox[0.8\linewidth]{\textbf{\uppercase{\large{Lista de Símbolos}}}} \makebox[\linewidth]{}\\[0.6cm]}{}}}
 
-\usepackage{indentfirst} % Indenta o primeiro parágrafo de cada seção.
-\usepackage{multirow} % Pacote de tabulação para tabelas
-\usepackage{bm} % Define o comando \bm para cujo argumento fica em negrito, inclusive formulas matemáticas
-\usepackage{lastpage} % Usado por abntex2-fichacatalografica.tex
-\usepackage[font=small,labelfont=bf,textfont=bf]{caption} % Legendas de floats em tamanho 10pt e negrito
-\usepackage{listings} % Permite digitar códigos em Latex
-\usepackage{textcomp} % Pacote com símbolos adicionais para latex (Ex.: baht, bullet, copyright, musicalnote, onequarter, section e yen)
-\usepackage{caption} % Permite customizar a legenda de figuras e tabelas
-\usepackage{upgreek} % Utilizado para letras gregas não-itálicas
-\usepackage{lscape} % Permite rotacionar páginas, mas não os números das páginas.
-\usepackage{lipsum} % Para texto filler
-\usepackage{verbatim}
-\usepackage{listings}
-\usepackage{pgfgantt}
+\usepackage{indentfirst}        % Indenta o primeiro parágrafo de cada seção.
+\usepackage{multirow}           % Pacote de tabulação para tabelas
+\usepackage{bm}                 % Define o comando \bm para cujo argumento fica em negrito, inclusive formulas matemáticas
+\usepackage{lastpage}           % Usado por abntex2-fichacatalografica.tex
+\usepackage[
+    font=small,
+    labelfont=bf,
+    textfont=bf
+]{caption}                      % Legendas de floats em tamanho 10pt e negrito
+\usepackage{listings}           % Permite digitar códigos em Latex
+\usepackage{textcomp}           % Pacote com símbolos adicionais para latex (Ex.: baht, bullet, copyright, musicalnote, onequarter, section e yen)
+\usepackage{caption}            % Permite customizar a legenda de figuras e tabelas
+\usepackage{upgreek}            % Utilizado para letras gregas não-itálicas
+\usepackage{lscape}             % Permite rotacionar páginas, mas não os números das páginas.
+\usepackage{lipsum}             % Para texto filler
+\usepackage{verbatim}           % Para imprimir texto assim como ele é escrito, ignora comandos 
+\usepackage{listings}           % Para escrita de códigos
+\usepackage{pgfgantt}           % Para um cronograma mais elaborado 
 
 %insira novos pacotes aqui:
+
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %Outras configurações:
@@ -126,8 +142,8 @@ english,french,spanish,brazil]{abntex2}
 % Configuração de posicionamento padrão:
 \setfloatlocations{quadro}{hbtp}
 
-
-%\setlength\afterchapskip{\lineskip} % Espaçamento de 1,5 entre o título do capítulo e corpo do texto
+% Espaçamento de 1,5 entre o título do capítulo e corpo do texto:
+%\setlength\afterchapskip{\lineskip} 
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %Início do documento:
@@ -151,7 +167,7 @@ english,french,spanish,brazil]{abntex2}
     %\input{abntex2-fichacatalografica.tex}
 
     % Insere a folha de aprovação (Obrigatório para TCC2)
-    %\input{folha-de-aprovacao.tex} % Altere o arquivo folha-de-aprovacao.tex com as informações do seu TCC
+    %\input{folha-de-aprovacao.tex} % Altere o arquivo folha-de-aprovacao.tex com as informações do seu TCC, apenas para o TCC2
     
     % Insere o resumo e o abstract (Obrigatório para TCC2)
     \input{Caps/resumo.tex} %resumo (deve conter resumo)
