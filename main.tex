@@ -24,7 +24,8 @@
     spanish,
     brazil
 ]{abntex2}                      % Classe ABNTEX
-%Observe que a ABNT NBR 14724:2011 (seção 5.1) recomenda que os documentos sejam impressos no anverso e no verso das folhas. Isso é obtido com a opção twoside.
+%Observe que a ABNT NBR 14724:2011 (seção 5.1) recomenda que os documentos sejam impressos no anverso e no verso 
+%das folhas. Isso é obtido com a opção twoside.
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %Pacotes para língua portuguesa do Brasil (código recomendado pelo estilo abntex2):
@@ -37,7 +38,11 @@
     \usepackage[T1]{fontenc}
 \fi
 
-%Observação: Quando um documento é compilado com xelatex, os pacotes inputenc e fontenc não devem ser incluídos ao preâmbulo do documento. Ao invés desses pacotes, geralmente fontspec é usado. O código anterior de preâmbulo torna flexível a compilação do documento, que pode tanto ser realizada da forma tradicional com pdflatex quanto com xelatex, uma vez que inclui seletivamente os pacotes adequados para cada compilador (página 14 do link http://linorg.usp.br/CTAN/macros/latex/contrib/abntex2/doc/abntex2.pdf).
+%Observação: Quando um documento é compilado com xelatex, os pacotes inputenc e fontenc não devem ser incluídos 
+%ao preâmbulo do documento. Ao invés desses pacotes, geralmente fontspec é usado. O código anterior de preâmbulo 
+%torna flexível a compilação do documento, que pode tanto ser realizada da forma tradicional com pdflatex quanto 
+%com xelatex, uma vez que inclui seletivamente os pacotes adequados para cada compilador (página 14 do link 
+%http://linorg.usp.br/CTAN/macros/latex/contrib/abntex2/doc/abntex2.pdf).
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %Informações do projeto de TCC:
@@ -56,7 +61,9 @@
 \preambulo{Projeto de Trabalho de Conclusão de Curso apresentado à disciplina de Trabalho de Conclusão de Curso 1 do Curso de Engenharia Eletrônica da Universidade Tecnológica Federal do Paraná - UTFPR Campus Toledo, como requisito parcial para a obtenção do título de Bacharel em Engenharia Eletrônica.}
 
 % Se TCC 2:
-%\preambulo{Trabalho de Conclusão de Curso apresentado à disciplina de Trabalho de Conclusão de Curso 2 do Curso de Engenharia Eletrônica da Universidade Tecnológica Federal do Paraná - UTFPR Campus Toledo, como requisito parcial para a obtenção do título de Bacharel em Engenharia Eletrônica.}
+%\preambulo{Trabalho de Conclusão de Curso apresentado à disciplina de Trabalho de Conclusão de Curso 2 do Curso 
+%de Engenharia Eletrônica da Universidade Tecnológica Federal do Paraná - UTFPR Campus Toledo, como requisito 
+%parcial para a obtenção do título de Bacharel em Engenharia Eletrônica.}
 
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %Pacotes adicionais:
@@ -116,7 +123,9 @@
 %+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 %Outras configurações:
 
-% "Por padrão, uma versão sem serifas da fonte corrente do documento é utilizada para os títulos das divisões. Você pode customizar a fonte dos títulos dos capítulos alterando os comandos como no exemplo a seguir, para que seja utilizada a fonte Computer Modern com tamanho maior do que o utilizado por padrão" (manual do abntex2).
+% "Por padrão, uma versão sem serifas da fonte corrente do documento é utilizada para os títulos das divisões. 
+%Você pode customizar a fonte dos títulos dos capítulos alterando os comandos como no exemplo a seguir, para 
+%que seja utilizada a fonte Computer Modern com tamanho maior do que o utilizado por padrão" (manual do abntex2).
 \renewcommand{\ABNTEXchapterfont}{\fontfamily{cmr}\fontseries{b}\selectfont}
 \renewcommand{\ABNTEXchapterfontsize}{\large}
 \renewcommand{\ABNTEXsectionfontsize}{\normalsize}
